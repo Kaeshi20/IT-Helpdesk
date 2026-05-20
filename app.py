@@ -63,13 +63,7 @@ def create_default_inventory():
 def save_data(df_to_save, sheet_name="Tickets"):
     items = ["System Unit", "Monitor", "UPS", "Keyboard", "Mouse", "Headset", "Wi-Fi Dongle", "Power Cable", "VGA Cable", "HDMI Cable"]
     default_inv = pd.DataFrame({"Equipment Item": items, "Available Stocks": [0]*10, "Defective": [0]*10, "Currently Deployed": [0]*10, "Needed to be Disposed": [0]*10, "Total Stock": [0]*10})
-    default_users = pd.DataFrame([{
-    "Username": "admin",
-    "Password": "password123",
-    "Role": "IT Department",
-    "Full Name": "System Admin",
-    "Department": "IT Department"
-}])
+    default_users = pd.DataFrame(columns=["Username", "Password", "Role", "Full Name", "Department"])
     default_status = pd.DataFrame([{"Current Status": "🟢 Online"}])
     default_dept = pd.DataFrame({"Department Name": ["Administration", "Finance", "HR", "Operations", "Sales/Marketing", "Other"]})
     
