@@ -3,6 +3,7 @@ import pandas as pd
 from datetime import datetime, timedelta
 import os
 import time
+import streamlit.components.v1 as components
 
 # Set up the web page styling and title
 pd_stream.set_page_config(page_title="IT Helpdesk System", layout="wide")
@@ -676,3 +677,21 @@ elif user_role == "IT Department":
                         pd_stream.toast(f"👤 Provisioned account {reg_user}!", icon="🎉")
                         time.sleep(0.6)
                         pd_stream.rerun()
+
+# Paste this at the very bottom of your app script
+components.html(
+    """
+    <script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/YOUR_UNIQUE_PROPERTY_ID/default';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+    </script>
+    """,
+    height=0, # Keeps it invisible until clicked
+)
