@@ -8,7 +8,7 @@ import streamlit.components.v1 as components
 # Set up the web page styling and title
 pd_stream.set_page_config(page_title="IT Helpdesk System", layout="wide")
 
-EXCEL_FILE = "it_tickets_database.xlsx"
+EXCEL_FILE = "it_tickets_database (1).xlsx"
 # ✨ SCREENSHOT STORAGE CONFIGURATION (OPTION A)
 SCREENSHOT_DIR = "ticket_screenshots"
 if not os.path.exists(SCREENSHOT_DIR):
