@@ -155,15 +155,12 @@ def load_users():
         try:
             df_users = pd.read_excel(EXCEL_FILE, sheet_name="Users")
             for _, row in df_users.iterrows():
-                # Forcefully clean strings of all hidden backend spaces or carriage returns
-                username = str(row["Username"]).strip().replace("\r", "").replace("\n", "").lower()
-                password_clean = str(row["Password"]).strip().replace("\r", "").replace("\n", "")
-
+                username = str(row["Username"]).strip().lower()
                 credentials_dict[username] = {
-                    "password": password_clean,
-                    "role": str(row["Role"]).strip(),
-                    "name": str(row["Full Name"]).strip(),
-                    "department": str(row.get("Department", "IT Department")).strip()
+                    "password": str(row["Password"]),
+                    "role": str(row["Role"]),
+                    "name": str(row["Full Name"]),
+                    "department": str(row.get("Department", "IT Department")) 
                 }
         except Exception:
             pass
